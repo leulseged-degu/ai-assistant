@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4fa;
+    color: #25243a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.chat-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(40, 35, 80, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #6554c0;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #77758a;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #deddec;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 130px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+    border-color: #7968d8;
+    box-shadow: 0 0 0 3px rgba(121, 104, 216, 0.12);
+}
+
+.character-count {
+    text-align: right;
+    color: #9996aa;
+    font-size: 12px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    background: #6d5bd0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #5846bd;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.response-area {
+    margin-top: 25px;
+    padding: 18px;
+    background: #f8f7fd;
+    border: 1px solid #eeecf8;
+    border-radius: 10px;
+    min-height: 100px;
+}
+
+.response-area h3 {
+    color: #6554c0;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+#response {
+    color: #4e4c60;
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .chat-box {
+        padding: 22px 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

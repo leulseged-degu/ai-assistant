@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="chat-box">
+        <h1>✦ AI Assistant</h1>
+        <p class="subtitle">Ask Gemini anything</p>
+
+        <textarea
+            id="message"
+            placeholder="Type your question here..."
+            rows="5"
+            maxlength="5000"
+        ></textarea>
+
+        <div class="character-count">
+            <span id="char-count">0</span>/5000
+        </div>
+
+        <button id="ask-button" type="button">
+            Ask Gemini
+        </button>
+
+        <div class="response-area">
+            <h3>Response</h3>
+            <p id="response">Your answer will appear here...</p>
+        </div>
+    </div>
+
+    <script>
+        const messageInput = document.getElementById("message");
+        const charCount = document.getElementById("char-count");
+
+        messageInput.addEventListener("input", function () {
+            charCount.textContent = messageInput.value.length;
+        });
+
+        messageInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById("ask-button").click();
+            }
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
